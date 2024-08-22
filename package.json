@@ -1,0 +1,17 @@
+{
+  "name": "aula-05",
+  "version": "1.0.0",
+  "description": "um projeto inicial de progamação Back-End",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "senai",
+    "dev"
+  ],
+  "author": "Vitor Sampaio",
+  "license": "MIT"
+}
