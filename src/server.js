@@ -11,6 +11,9 @@ app.use(express.json())
 app.get("/", (req, res) => {
     return res.status(200).send({ message:"hello word!"})
 })
+app.get("/2tds2", (req, res) => {
+    return res.status(500).send({ message:"hello word!"})
+})
 
 app.listen(serverPort, () => {
     console.log(`🙅‍♂️🙇‍♀️👌🤰 Server starded on http://localhost:${serverPort}`)
