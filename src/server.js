@@ -65,6 +65,17 @@ app.get("/personagens", (req, res) => {
     return res.status(200).send(personagens)
 });
 
+app.post("/emocoes", (req, res) => {
+    const {nome, cor} = req.body
+    const newemocao = {
+        id: emocoes.length + 1,
+        nome: nome,
+        cor: cor
+    }
+    emocoes.push(newemocao)
+    return res.status(200).send(emocoes)
+});
+
 app.listen(serverPort, () => {
     console.log(`🙅‍♂️🙇‍♀️👌🤰 Server starded on http://localhost:${serverPort}`)
 })
