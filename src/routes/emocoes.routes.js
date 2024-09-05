@@ -2,7 +2,7 @@ import { Router } from "express"
 
 const emocoesRoutes = Router()
 
-const emocoes = [
+let emocoes = [
     {
         id: 1,
         nome: "Nojinho",
@@ -21,11 +21,11 @@ const emocoes = [
 
 ]
 
-app.get("/emocoes", (req, res) => {
+emocoesRoutes.get("/", (req, res) => {
     return res.status(200).send(emocoes)
 });
 
-app.post("/emocoes", (req, res) => {
+emocoesRoutes.post("/", (req, res) => {
     const {nome, cor} = req.body
     const newemocao = {
         id: emocoes.length + 1,
@@ -33,5 +33,10 @@ app.post("/emocoes", (req, res) => {
         cor: cor
     }
     emocoes.push(newemocao)
-    return res.status(200).send(emocoes)
+    return res.status(201).send(emocoes)
 });
+
+export default emocoesRoutes
+
+
+

@@ -3,19 +3,15 @@ import {config} from "dotenv"
 
 config()
 
+import routes from "./routes/index.routes.js"
+
 const serverPort = process.env.PORT || 3000
 
 const app = express()
 app.use(express.json())
+app.use(routes);
 
-app.get("/", (req, res) => {
-    return res.status(200).send({ message:"hello word!"})
-});
-
-app.get("/2tds2", (req, res) => {
-    return res.status(200).send({ message:"hello 2tds2!"})
-});
 
 app.listen(serverPort, () => {
-    console.log(`🙅‍♂️🙇‍♀️👌🤰 Server starded on http://localhost:${serverPort}`)
+    console.log(`👌Server starded on http://localhost:${serverPort}`)
 })
